@@ -6,7 +6,7 @@ const correctsound = new Audio('media/correct.mp3');
 const wrongsound = new Audio('media/wrong.mp3');
 const timeslider = document.getElementById('snappingRange')
 
-const snapValues = [0.6, 0.8, 1, 1.2, 1.6, 1.8, 2]; // Define custom snapping values
+const snapValues = [0.6, 0.8, 1, 1.2, 1.4, 1.6, 1.8, 2]; // Define custom snapping values
 
 function snapValue(value) {
     const closestValue = snapValues.reduce((prev, curr) => {
