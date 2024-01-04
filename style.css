@@ -31,6 +31,10 @@ body {
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .slidertext{
@@ -75,3 +79,71 @@ body {
     opacity: 0;
 }
 
+.restart{
+    background-color: #000;
+    border: solid 3px limegreen;
+    color: limegreen;
+    font-family: monospace;
+    font-size: 20px;
+    padding: 5px;
+    height: 40px;
+    transition: 0.2s;
+    border-top-color: green;
+    border-right-color: green;
+    position: absolute;
+    top: 65%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.restart:hover{
+    top:64%;    
+}
+
+.restart2{
+    background-color: #000;
+    border: solid 3px crimson;
+    color: crimson;
+    font-family: monospace;
+    font-size: 20px;
+    padding: 5px;
+    height: 40px;
+    transition: 0.2s;
+    border-top-color: red;
+    border-right-color: red;
+    position: absolute;
+    top: 65%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.restart2:hover{
+    top:64%;    
+}
+
+.start{
+    background-color: #000;
+    border: solid 3px limegreen;
+    color: limegreen;
+    font-family: monospace;
+    font-size: 20px;
+    padding: 5px;
+    height: 40px;
+    width:80px;
+    transition: 0.2s;
+    border-top-color: green;
+    border-right-color: green;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.start:hover{
+    opacity: 0.8;   
+}

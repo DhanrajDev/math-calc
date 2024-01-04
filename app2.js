@@ -5,6 +5,20 @@ const numsound = new Audio('media/number.mp3');
 const correctsound = new Audio('media/correct.mp3');
 const wrongsound = new Audio('media/wrong.mp3');
 const timeslider = document.getElementById('snappingRange')
+const rstbtn = document.getElementById("rstbtn")
+const rstbtn2 = document.getElementById("rstbtn2")
+
+function loadData() {
+    const savedValue = localStorage.getItem('savedValue');
+    if (savedValue) {
+      document.getElementById('snappingRange').value = savedValue;
+      document.getElementById('rangeValue').textContent = savedValue;
+    }
+}
+
+window.onload = loadData();
+
+
 
 const snapValues = [0.6, 0.8, 1, 1.2, 1.4, 1.6, 1.8, 2]; // Define custom snapping values
 
@@ -26,7 +40,7 @@ const pyro = document.getElementById('pyro');
 
 function play() {
     document.getElementById('sliderdiv').style.display = 'none'
-
+    localStorage.setItem('savedValue', timeslider.value);
     number.style.display = 'block'
     correctText.style.display = 'block'
     wrongText.style.display = 'block'
@@ -64,9 +78,6 @@ function game() {
 }
 
 function end() {
-    var sum = numbers.reduce(function (accumulator, currentValue) {
-        return accumulator + currentValue;
-    }, 0);
     number.style.top = "30%"
     number.style.transition = "1s"
     inputdiv.style.opacity = "1"
@@ -103,6 +114,7 @@ function correct(sum) {
     ansmsg.style.opacity = "1"
     ansmsg.style.top = "50%"
     ansmsg.style.transition = "1s 1s"
+    rstbtn.style.display = "flex"
 }
 
 function wrong(sum) {
@@ -116,5 +128,5 @@ function wrong(sum) {
     ansmsg.style.opacity = "1"
     ansmsg.style.top = "50%"
     ansmsg.style.transition = "1s 1s"
-
+    rstbtn2.style.display = "flex"
 }
