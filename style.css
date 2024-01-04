@@ -79,7 +79,7 @@ body {
     opacity: 0;
 }
 
-.restart{
+.restart3{
     background-color: #000;
     border: solid 3px limegreen;
     color: limegreen;
@@ -99,7 +99,7 @@ body {
     align-items: center;
 }
 
-.restart:hover{
+.restart3:hover{
     top:64%;    
 }
 

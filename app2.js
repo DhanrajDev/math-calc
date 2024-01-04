@@ -5,7 +5,7 @@ const numsound = new Audio('media/number.mp3');
 const correctsound = new Audio('media/correct.mp3');
 const wrongsound = new Audio('media/wrong.mp3');
 const timeslider = document.getElementById('snappingRange')
-const rstbtn = document.getElementById("rstbtn")
+const rstbtn = document.getElementById("rstbtn3")
 const rstbtn2 = document.getElementById("rstbtn2")
 
 function loadData() {
@@ -83,17 +83,14 @@ function end() {
     inputdiv.style.opacity = "1"
     inputdiv.style.transition = "1s 1s"
 }
-// Access the form element using its ID
 const form = document.getElementById('input');
 
-// Add an event listener for the form submission
 form.addEventListener('submit', function (event) {
-    // Prevent the default form submission
     event.preventDefault();
     var sum = numbers.reduce(function (accumulator, currentValue) {
         return accumulator + currentValue;
     }, 0);
-    // Access input values using their IDs or names
+
     const name = document.getElementById('inputnum').value;
     number.remove()
     inputdiv.remove()
@@ -115,6 +112,7 @@ function correct(sum) {
     ansmsg.style.top = "50%"
     ansmsg.style.transition = "1s 1s"
     rstbtn.style.display = "flex"
+    console.log(rstbtn.style.display, rstbtn.style.opacity, rstbtn.style.transform)
 }
 
 function wrong(sum) {
@@ -129,4 +127,6 @@ function wrong(sum) {
     ansmsg.style.top = "50%"
     ansmsg.style.transition = "1s 1s"
     rstbtn2.style.display = "flex"
+    
+    console.log(rstbtn2.style.display, rstbtn2.style.opacity, rstbtn2.style.transform)
 }
