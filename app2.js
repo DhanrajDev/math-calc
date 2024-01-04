@@ -51,7 +51,6 @@ function game() {
             numsound.play()
             number.innerHTML = random.toString();
             random = Math.floor((Math.random() * 14) - 7);
-            console.log(numbers);
 
             iteration++;
             game(); // Trigger the next iteration
@@ -72,7 +71,6 @@ function end() {
     number.style.transition = "1s"
     inputdiv.style.opacity = "1"
     inputdiv.style.transition = "1s 1s"
-    console.log(sum)
 }
 // Access the form element using its ID
 const form = document.getElementById('input');
