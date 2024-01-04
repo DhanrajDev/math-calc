@@ -5,6 +5,9 @@
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
+    color: white;
+    opacity: 1;
+    display: none;
 }
 
 .input{
@@ -13,4 +16,62 @@
     top: 70%;
     transform: translate(-50%, -50%);
     opacity: 0;
+    display: none;
 }
+
+body {
+    margin: 0;
+    padding: 0;
+    background: #000;
+    overflow: hidden;
+}
+
+.slider{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.slidertext{
+    color:white;
+    font-family: monospace;
+}
+
+.correctText{
+    font-size: 100px;
+    font-family: monospace;
+    position: absolute;
+    left: 50%;
+    top: 40%;
+    transform: translate(-50%, -50%);
+    color: limegreen;
+    opacity: 0;
+    display: none;
+}
+.wrongText{
+    font-size: 100px;
+    font-family: monospace;
+    position: absolute;
+    left: 50%;
+    top: 40%;
+    transform: translate(-50%, -50%);
+    color: red;
+    opacity: 0;
+    display: none;
+}
+.ansmsg{
+    font-size: 40px;
+    font-family: monospace;
+    position: absolute;
+    left: 50%;
+    top: 60%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    color: rgb(255, 255, 255);
+    display: none;
+}
+.pyro{
+    opacity: 0;
+}
+

@@ -1,25 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Math</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="pyro.css">
     <script defer src="app2.js"></script>
 </head>
+
 <body>
+    <div class="slider" id="sliderdiv">
+        <input type="range" id="snappingRange" min="0.6" max="2" step="0.2" oninput="snapValue(this.value)">
+        <p class="slidertext">Time: <span id="rangeValue">1</span> seconds</p>
+        <button onclick="play()">Start</button>
+    </div>
+    
     <div class="number" id="number">0</div>
     <div class="input" id="inputdiv">
-        <form id="input" onsubmit="Check()">
-        <input
-        type="text"
-        inputmode="numeric"
-        maxlength="3"
-        placeholder="Write your answer"
-        
-      /></form>
-      
+        <form id="input">
+            <input id="inputnum" type="text" inputmode="numeric" maxlength="3" placeholder="Write your answer" />
+        </form>
+
+    </div>
+    <!--firecrackers-->
+    <div class="pyro" id="pyro">
+        <div class="before"></div>
+        <div class="after"></div>
+    </div>
+    <!--Correct msgs-->
+    <div>
+        <div class="correctText" id="correctText">Correct!</div>
+        <div class="wrongText" id="wrongText">Wrong!</div>
+        <div class="ansmsg" id="ansmsg">The answer was indeed 5.</div>
     </div>
 </body>
+
 </html>
