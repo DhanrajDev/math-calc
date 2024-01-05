@@ -7,18 +7,33 @@ const wrongsound = new Audio('media/wrong.mp3');
 const timeslider = document.getElementById('snappingRange')
 const rstbtn = document.getElementById("rstbtn3")
 const rstbtn2 = document.getElementById("rstbtn2")
+const form = document.getElementById('input');
+const startbtn = document.getElementById('strtbtn');
 
 function loadData() {
     const savedValue = localStorage.getItem('savedValue');
     if (savedValue) {
-      document.getElementById('snappingRange').value = savedValue;
-      document.getElementById('rangeValue').textContent = savedValue;
+        document.getElementById('snappingRange').value = savedValue;
+        document.getElementById('rangeValue').textContent = savedValue;
     }
 }
 
 window.onload = loadData();
 
+function btnclick(event) {
+    if (event.key === 'Enter') {
+        startbtn.click();
+    }
+}
 
+function rstclick(event){
+    if (event.key === 'Enter') {
+        if(rstbtn){rstbtn.click();}
+        else{rstbtn2.click()}        
+    }
+}
+
+document.addEventListener('keydown', btnclick)
 
 const snapValues = [0.6, 0.8, 1, 1.2, 1.4, 1.6, 1.8, 2]; // Define custom snapping values
 
@@ -39,8 +54,9 @@ const ansmsg = document.getElementById('ansmsg');
 const pyro = document.getElementById('pyro');
 
 function play() {
-    document.getElementById('sliderdiv').style.display = 'none'
+    document.removeEventListener('keydown', btnclick)
     localStorage.setItem('savedValue', timeslider.value);
+    document.getElementById('sliderdiv').remove();
     number.style.display = 'block'
     correctText.style.display = 'block'
     wrongText.style.display = 'block'
@@ -82,8 +98,9 @@ function end() {
     number.style.transition = "1s"
     inputdiv.style.opacity = "1"
     inputdiv.style.transition = "1s 1s"
+    document.getElementById('inputnum').focus();
 }
-const form = document.getElementById('input');
+
 
 form.addEventListener('submit', function (event) {
     event.preventDefault();
@@ -99,6 +116,7 @@ form.addEventListener('submit', function (event) {
     } else {
         wrong(sum)
     }
+    document.addEventListener('keydown', rstclick)
 });
 
 function correct(sum) {
@@ -112,7 +130,6 @@ function correct(sum) {
     ansmsg.style.top = "50%"
     ansmsg.style.transition = "1s 1s"
     rstbtn.style.display = "flex"
-    console.log(rstbtn.style.display, rstbtn.style.opacity, rstbtn.style.transform)
 }
 
 function wrong(sum) {
@@ -127,6 +144,4 @@ function wrong(sum) {
     ansmsg.style.top = "50%"
     ansmsg.style.transition = "1s 1s"
     rstbtn2.style.display = "flex"
-    
-    console.log(rstbtn2.style.display, rstbtn2.style.opacity, rstbtn2.style.transform)
 }
