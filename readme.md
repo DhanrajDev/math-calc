@@ -1,4 +1,4 @@
-# Project Title
+# Math Trainer
 
 This is a simple math calculation trainer. 10 random numbers between -6 to 7 will be generated every unit time and the goal is to calculate the total sum of those numbers and submit at the end to check if you were right.
 
