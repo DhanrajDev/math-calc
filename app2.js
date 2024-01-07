@@ -98,7 +98,8 @@ function end() {
     number.style.transition = "1s"
     inputdiv.style.opacity = "1"
     inputdiv.style.transition = "1s 1s"
-    document.getElementById('inputnum').focus();
+    const inputbox = document.getElementById('inputnum')
+    if(inputbox){inputbox.focus();}    
 }
 
 
